@@ -1,14 +1,14 @@
 # 制作步骤与复现
 
 
-1. 核对源站目录、组件 HTML/JS 与演示画面，整理来源和分镜，见 [treatment.md](treatment.md)。
-2. 安装 Node.js、Python 3 / numpy、Chrome、FFmpeg；运行 `npm install`。
+1. 核对源站目录、组件 HTML/JS 与演示画面，整理来源和分镜，见 [treatment.md](../film/treatment.md)。
+2. 安装 Node.js、Python 3 / numpy、Chrome、FFmpeg；先进入 `film/` 目录，再运行 `npm install`。
 3. `index.html` 包含五种控件的确定性模拟、Bento 布局和字幕；每个场景由绝对时间计算状态。预览页是影片时间轴，不是接受真实拖动的生产组件页面。
 4. `python3 make_audio.py` 合成 20 秒、120 BPM、2/4 拍音轨。18 秒终止和弦，末尾 0.8 秒淡出。
 5. `npm run stills` 导出九个 JPG。检查文字裁切、重排遮挡、指针位置、动作与结果，再修订。
 6. `npm run render` 调用 `draw(i/60)` 导出 1,200 帧。默认使用 macOS Chrome 路径，其他平台通过 `CHROME_PATH` 指定。
 7. `sh encode.sh` 生成 `drag-microinteractions-20s.mp4`：H.264 Main / yuv420p / BT.709、AAC 48kHz、每秒关键帧、faststart。
-8. 检查实际 MP4 抽帧、完整播放、跳转与音频峰值。记录见 [QA.md](QA.md)。
+8. 检查实际 MP4 抽帧、完整播放、跳转与音频峰值。记录见 [影片 QA.md](../film/QA.md)。
 9. 使用 huashu-motion 时，可运行 `om studio . --no-open` 预览时间轴，`om check .` 检查确定性，`om qa .` 检查突帧与节奏。
 
 
