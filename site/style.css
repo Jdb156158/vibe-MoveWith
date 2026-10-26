@@ -9,3 +9,5 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
 
 .task,.file,#resize-handle,#network,#pip-handle{user-select:none;-webkit-user-select:none}
+
+#bin.over{outline:2px dashed #f1a18c;outline-offset:8px;border-radius:10px}
